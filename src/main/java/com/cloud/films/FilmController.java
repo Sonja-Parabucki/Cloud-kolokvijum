@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "film-lib")
+@RequestMapping()
 public class FilmController {
 
     @Autowired
     private FilmService service;
 
-    @GetMapping(value = "/films")
+    @GetMapping
     public ResponseEntity<List<Film>> getAll() {
         return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
     }
 
-    @PostMapping
+    @GetMapping(value = "/film-data")
     public ResponseEntity<Film> add(@RequestParam("title") String title,
                                     @RequestParam("genre") String genre,
                                     @RequestParam("year") int year) {

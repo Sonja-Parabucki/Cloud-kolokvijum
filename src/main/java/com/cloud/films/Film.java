@@ -1,11 +1,11 @@
 package com.cloud.films;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.beans.factory.annotation.Value;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "sv_34_2021")
 public class Film {
 
     @Id
